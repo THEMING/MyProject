@@ -13,7 +13,7 @@ public class TimeDecodeHandler extends ReplayingDecoder<UnixTime>{
 	protected void decode(ChannelHandlerContext ctx, ByteBuf in,
 			List<Object> out) throws Exception {
 		if(in.readableBytes()<4){
-			return ;
+			return;
 		}
 		out.add(new UnixTime(in.readUnsignedInt()));
 	}
